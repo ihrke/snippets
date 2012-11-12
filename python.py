@@ -14,11 +14,24 @@ R=robjects.r
 from rpy2.robjects.packages import importr
 grdevices = importr('grDevices')
 
+# for resizing plots (optional
+#from rpy2.interactive import process_revents
+#process_revents.start()
+
 grdevices.X11()
 
 # ... plotting
 
 grdevices.dev_off()
+
+def rdev_off():
+    """shut down all open R-devices"""
+    while 1:
+        try:
+            grdevices.dev_off()
+        except:
+            break
+
 
 # -------------------------------------------------------------
 # Multi-Page pdf plot with matplotlib
