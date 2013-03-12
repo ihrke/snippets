@@ -1,4 +1,30 @@
 # -------------------------------------------------------------
+# Production-settings for matplotlib
+# -------------------------------------------------------------
+import matplotlib
+import matplotlib.cm as cm
+
+legendsize=40
+ticksize=30
+linewidth=3
+
+matplotlib.rcParams['figure.facecolor'] = 'white'
+matplotlib.rcParams['font.size'] = ticksize
+matplotlib.rcParams['text.usetex']=True
+matplotlib.rcParams['font.family']='serif'
+matplotlib.rcParams['font.serif']='Computer Modern Roman'#New Century Schoolbook'
+
+fig_size = np.array([14,14]) / 2.54  ## adjust figure aspects
+geometry = [0.125, 0.145, 0.725, 0.725] ## (x,y), width, height
+
+fig=pl.figure()
+fig.clf()
+fig.set_size_inches(fig_size,forward=True)
+ax = fig.add_axes(geometry)
+
+ax.plot(...)
+
+# -------------------------------------------------------------
 # Using Rpy2
 # -------------------------------------------------------------
 
